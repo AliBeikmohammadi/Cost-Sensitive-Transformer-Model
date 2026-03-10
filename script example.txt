@@ -1,0 +1,36 @@
+python DataPreprocessingCode.py
+
+
+python TrainingCode.py [-h] [--seed_number SEED_NUMBER] [--learning_rate LEARNING_RATE] [--pos_weight POS_WEIGHT]
+                       [--gamma GAMMA] [--num_epochs NUM_EPOCHS] [--batch_size BATCH_SIZE] [--head_size HEAD_SIZE]
+                       [--num_heads NUM_HEADS] [--ff_dim FF_DIM] [--num_transformer_blocks NUM_TRANSFORMER_BLOCKS]
+                       [--mlp_dropout MLP_DROPOUT] [--dropout DROPOUT] [--mlp_units MLP_UNITS]
+Train a Transformer on APS
+optional arguments:
+  -h, --help            show this help message and exit
+  --seed_number SEED_NUMBER
+                        seed number
+  --learning_rate LEARNING_RATE
+                        learning rate for the optimizer
+  --pos_weight POS_WEIGHT
+                        pos_weight for the focal loss
+  --gamma GAMMA         gamma for the focal loss
+  --num_epochs NUM_EPOCHS
+                        number of epochs to train
+  --batch_size BATCH_SIZE
+                        batch size
+  --head_size HEAD_SIZE
+                        head size
+  --num_heads NUM_HEADS
+                        num heads
+  --ff_dim FF_DIM       ff dim
+  --num_transformer_blocks NUM_TRANSFORMER_BLOCKS
+                        num transformer blocks
+  --mlp_dropout MLP_DROPOUT
+                        mlp_dropout
+  --dropout DROPOUT     dropout
+  --mlp_units MLP_UNITS
+                        mlp units
+
+For Instance:
+python TrainingCode.py --seed_number 0 --learning_rate 0.0005 --pos_weight 0.95 --gamma 1.5 --num_epochs 8000 --batch_size 72 --head_size 256 --num_heads 4 --ff_dim 4 --num_transformer_blocks 4 --mlp_dropout '128_64' --dropout 0.4 --mlp_units 0.25
